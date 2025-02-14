@@ -1,0 +1,568 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+}
+
+/* Navbar */
+nav {
+    background-color: #0066cc;
+    height: 80px; /* Set a fixed height for the navbar */
+    display: flex;
+    align-items: center; /* Vertically center the items */
+    padding: 0 20px;
+    color: white /* Optional: adds some padding on the sides */
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between; /* To space the logo and the nav items */
+    width: 100%; /* Ensures the navbar stretches to full width */
+}
+
+/* Logo Styling */
+.logo img {
+    height: 85px; /* Set a fixed size for the logo */
+    width: auto;
+}
+
+/* Navbar Links */
+.navbar ul {
+    display: flex;
+    justify-content: end;
+    gap: 40px;
+    list-style: none;
+    font-size: large;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar ul li {
+    cursor: pointer;
+    font-weight: 600;
+    color: white;
+}
+.navbar ul li a{
+    color: white;
+    text-decoration: none;
+}
+/* Hero Section */
+.hero {
+    background: url('https://thumbs.dreamstime.com/z/doctor-medical-apron-27546089.jpg') no-repeat center center/cover;
+    height: 100vh;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    background-size: cover;
+}
+
+/* Adding a gradient overlay to ensure the text stands out */
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);  /* Dark overlay */
+    z-index: 1;
+}
+
+/* Hero content styling */
+.hero-content {
+    z-index: 2; /* Ensures the content is on top of the overlay */
+    color: white;
+    padding: 0 20px;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    font-weight: bold;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.6);  /* Adds shadow to improve text visibility */
+}
+
+.hero p {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.5);  /* Adds shadow to paragraph */
+}
+
+.cta-button {
+    background-color: #0066cc;
+    color: white;
+    padding: 10px 10px;
+    text-decoration: none;
+    font-size: 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Added transition */
+    display: inline-block;
+    font-weight: bolder;
+}
+
+/* Button hover effect */
+.cta-button:hover {
+    background-color: #004d99;
+    transform: translateY(-5px);  /* Lifts the button on hover */
+}
+
+.cta-button:active {
+    transform: translateY(2px);  /* Adds slight press effect when clicked */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 1.2rem;
+    }
+
+    .cta-button {
+        font-size: 1rem;
+        padding: 12px 25px;
+    }
+}
+
+
+/* Why Study Section */
+/* Why Study MBBS Abroad Section */
+/* Why Study MBBS Abroad Section */
+.why-study {
+    background: linear-gradient(135deg, #0066cc, #0099cc); /* Add a gradient background */
+    color: white;
+    padding: 80px 20px;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+}
+
+.why-study h2 {
+    font-size: 2.8rem;
+    margin-bottom: 40px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    opacity: 0;
+    animation: fadeIn 1s ease-out forwards;
+}
+
+.reasons-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 50px;
+    animation: slideIn 1s ease-out forwards;
+}
+
+.reason {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    width: 350px;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.reason:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.reason img {
+    width: 300px;
+    height: 300px;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+}
+
+.reason h3 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    font-weight: 600;
+    color: #fff;
+}
+
+.reason p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #e0e0e0;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .why-study h2 {
+        font-size: 2.2rem;
+    }
+
+    .reasons-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .reason {
+        width: 80%;
+        padding: 20px;
+    }
+
+    .reason img {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+
+/* Top Countries Section */
+/* General Style */
+.top-countries {
+    background-color: #2b6b83;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.top-countries h2 {
+    font-size: 2.8rem;
+    color: white;
+    font-weight: 700;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Flexbox for responsive layout */
+.country-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* Individual Country Card Style */
+.country {
+    background-color: #0066cc;
+    color: white;
+    padding: 25px;
+    margin: 10px;
+    border-radius: 10px;
+    font-size: 1.5rem;
+    width: 250px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.country img {
+    width: 90%;
+    height: 90%;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+}
+
+.country h3 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-top: 10px;
+    transition: color 0.3s ease;
+}
+
+/* Hover Effect for Country Cards */
+.country:hover {
+    transform: translateY(-10px);
+    background-color: #0057b8;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.country:hover img {
+    transform: scale(1.1);
+}
+
+.country:hover h3 {
+    color: #ffcc00;
+}
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+    .country {
+        width: 90%;
+        padding: 15px;
+        height: 250px;
+    }
+
+    .top-countries h2 {
+        font-size: 2rem;
+    }
+
+    .country img {
+        width: 50%;
+    }
+
+    .country h3 {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .country {
+        width: 100%;
+    }
+
+    .top-countries h2 {
+        font-size: 1.5rem;
+    }
+
+    .country h3 {
+        font-size: 1.2rem;
+    }
+}
+
+/* Admission Process Section */
+/* General Styling for the Admission Process Section */
+.admission-process {
+    background-color: rgb(78, 162, 227);
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.admission-process h2 {
+    font-size: 2.8rem;
+    color: #333;
+    font-weight: 700;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Admission Process Steps */
+.process-steps {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.step {
+    background-color: #ffffff;
+    border-left: 5px solid #0066cc;
+    padding: 20px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: left;
+}
+
+.step:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.step-icon {
+    width: 50px;
+    height: 50px;
+    background-color: #0066cc;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.step-icon img {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+}
+
+/* Title and Description */
+.step h3 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.step p {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin: 0;
+    color: #555;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .admission-process h2 {
+        font-size: 2.2rem;
+    }
+
+    .step {
+        padding: 20px 15px;
+    }
+
+    .step h3 {
+        font-size: 1.5rem;
+    }
+
+    .step p {
+        font-size: 1rem;
+    }
+}
+
+
+/* Lead Form Section */
+/* Lead Form Section */
+.lead-form {
+    background-color: #f7f7f7;
+    padding: 60px 20px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    max-width: 600px;
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.lead-form h2 {
+    font-size: 2.8rem;
+    margin-bottom: 30px;
+    color: #333;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Form Input Fields */
+.input-group {
+    margin-bottom: 20px;
+}
+
+.lead-form input,
+.lead-form select {
+    width: 100%;
+    padding: 15px;
+    font-size: 1.1rem;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    transition: border-color 0.3s ease;
+}
+
+.lead-form input:focus,
+.lead-form select:focus {
+    border-color: #0066cc;
+    outline: none;
+}
+
+/* Submit Button Styling */
+.cta-button {
+    background-color: #0066cc;
+    color: white;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 10px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.cta-button:hover {
+    background-color: #004d99;
+    transform: translateY(-5px);
+}
+
+.cta-button:active {
+    transform: translateY(2px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .lead-form {
+        padding: 40px 20px;
+    }
+
+    .lead-form h2 {
+        font-size: 2.2rem;
+    }
+
+    .lead-form input,
+    .lead-form select {
+        font-size: 1rem;
+    }
+
+    .cta-button {
+        font-size: 1rem;
+    }
+}
+
+/* Footer Section */
+.footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+}
+
+.footer p {
+    font-size: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .country {
+        font-size: 1rem;
+        padding: 10px 20px;
+    }
+
+    .lead-form input,
+    .lead-form select {
+        width: 90%;
+    }
+
+    .lead-form button {
+        font-size: 1rem;
+    }
+}
